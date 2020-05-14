@@ -1,0 +1,32 @@
+ /* .country {
+    width: 10%;
+    height: 5%;
+    overflow: hidden;
+    border: 2px double red;
+} */
+
+main{
+    background-color: lightgrey;
+} 
+
+.allCountries {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+.countryCard{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+img{
+    width: 100%;
+}
+
+.upperHeader {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
