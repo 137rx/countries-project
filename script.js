@@ -32,9 +32,10 @@ function searchBar(countryList) {
   searchCountry.addEventListener("keyup", () => {
     let filteredCountries = countryList.filter((country) => {
       let lowerCaseName = country.name.toLowerCase();
+      let lowerCaseCapital = country.capital.toLowerCase();
       let searchValue = searchCountry.value.toLowerCase();
       if (
-        lowerCaseName.includes(searchValue)
+        lowerCaseName.includes(searchValue) || lowerCaseCapital.includes(searchValue)
       ) {
         return country;
       }
@@ -45,7 +46,7 @@ function searchBar(countryList) {
 }
 
 function matchRegion(countryList){
-  let targetSelectRegion = document.querySelector(".regionSelect")
+  // let targetSelectRegion = document.querySelector(".regionSelect")
     selectShowBox.addEventListener("change", (event) => {
       targetCountries.innerHTML = "";
       countryList.forEach((country) => {
@@ -66,10 +67,10 @@ function fetchCountries() {
     })
     .then((data) => {
       console.log(data);
-      searchBar(data);
-      countryInfo(data);
       makePageForCountries(data)
-      matchRegion(data)
+      // searchBar(data);
+      matchRegion(data);
+      // countryInfo(data);
     }).catch((error) => console.log("error"));
 }
 
