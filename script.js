@@ -45,17 +45,22 @@ function searchBar(countryList) {
   })
 }
 
+
 function matchRegion(countryList){
-  // let targetSelectRegion = document.querySelector(".regionSelect")
-    selectShowBox.addEventListener("change", (event) => {
+  let targetSelectRegion = document.querySelector(".regionSelect")
+  targetSelectRegion.addEventListener("change",()=>{
+
       targetCountries.innerHTML = "";
-      countryList.forEach((country) => {
+      countryList.forEach((event) => {
         if (event.target.value == country.region) {
           fetchCountries(country.name);
         }
-      });
+      
     });
-  }
+    
+  })
+   
+
   
 
 
@@ -68,7 +73,7 @@ function fetchCountries() {
     .then((data) => {
       console.log(data);
       makePageForCountries(data)
-      // searchBar(data);
+      searchBar(data);
       matchRegion(data);
       // countryInfo(data);
     }).catch((error) => console.log("error"));
