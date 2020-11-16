@@ -50,16 +50,21 @@ function matchRegion(countryList){
   let targetSelectRegion = document.querySelector(".regionSelect")
   targetSelectRegion.addEventListener("change",()=>{
 
-      targetCountries.innerHTML = "";
-      countryList.forEach((event) => {
-        if (event.target.value == country.region) {
-          fetchCountries(country.name);
+      let selectedValue = document.querySelector(".regionSelect").value
+     
+
+     let filteredByRegion = countryList.filter((country) => {
+        if (selectedValue == country.region) {
+          
+          return country
+          
         }
       
     });
-    
+    targetCountries.innerHTML = " "
+    return makePageForCountries(filteredByRegion)
   })
-   
+}
 
   
 
@@ -75,7 +80,7 @@ function fetchCountries() {
       makePageForCountries(data)
       searchBar(data);
       matchRegion(data);
-      // countryInfo(data);
+      countryInfo(data);
     }).catch((error) => console.log("error"));
 }
 
