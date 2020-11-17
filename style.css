@@ -20,13 +20,20 @@ main{
     flex-direction: column;
    
 }
+.moon-icon{
+    height: 2rem;
+}
 
 img{
     width: 100%;
 }
 
 .upperHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
     width: 100%;
     margin: 0;
 }
+
