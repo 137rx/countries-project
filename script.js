@@ -2,6 +2,11 @@ function setup() {
   fetchCountries();
 }
 
+const checkbox= document.getElementById("checkbox");
+
+checkbox.addEventListener("change", ()=>{
+  document.body.classList.toggle("dark")
+})
 
 function makePageForCountries(countryList){
   return countryList.forEach((country) => {

@@ -5,6 +5,14 @@
     border: 2px double red;
 } */
 
+
+
+body.dark,  body.dark main{
+    background-color: hsl(207, 26%, 17%);
+}
+
+
+
 main{
     background-color: lightgrey;
 } 
@@ -22,6 +30,9 @@ main{
 }
 .moon-icon{
     height: 2rem;
+}
+.checkbox {
+    opacity: 0;
 }
 
 img{
