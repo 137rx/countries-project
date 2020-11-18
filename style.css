@@ -11,7 +11,9 @@ body.dark,  body.dark main{
     background-color: hsl(207, 26%, 17%);
 }
 
-
+body.dark .upperHeader, body.dark .countrySearch, body.dark .countryCard, body.dark .regionSelect {
+    background-color: hsl(209, 23%, 22%);
+}
 
 main{
     background-color: lightgrey;
@@ -26,7 +28,7 @@ main{
 .countryCard{
     display: flex;
     flex-direction: column;
-   
+   margin: 2%;
 }
 .moon-icon{
     height: 2rem;
