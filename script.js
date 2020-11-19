@@ -19,7 +19,6 @@ let targetCountries = document.querySelector(".allCountries");
 
 function countryInfo(country){
   
-  // let targetCountries = document.querySelector(".allCountries");
   let  countryCard =document.createElement('div')
   countryCard.className = "countryCard col-12 sm-col-12 md-col-5 lg-col-3"
   countryCard.innerHTML = `<img src = "${country.flag}" alt = "country flag">
@@ -27,9 +26,17 @@ function countryInfo(country){
   <p>Population: ${country.population.toLocaleString()}</p>
   <p>Region: ${country.region}</p>
   <p>Capital: ${country.capital}</p>`;
+
+  countryCard.addEventListener("click", ()=>{
+  targetCountries.innerHTML = " ";
+  targetCountries.append(countryCard)
+  })
   
   targetCountries.append(countryCard)
+
 }
+
+
 
 function searchBar(countryList) {
   let searchCountry = document.querySelector(".countrySearch")

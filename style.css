@@ -13,6 +13,7 @@ body.dark,  body.dark main{
 
 body.dark .upperHeader, body.dark .countrySearch, body.dark .countryCard, body.dark .regionSelect {
     background-color: hsl(209, 23%, 22%);
+    color: white;
 }
 
 main{
