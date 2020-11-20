@@ -29,7 +29,23 @@ function countryInfo(country){
 
   countryCard.addEventListener("click", ()=>{
   targetCountries.innerHTML = " ";
-  targetCountries.append(countryCard)
+  let countryMax = document.createElement("div")
+    countryMax.className = "countryMax"
+    countryMax.innerHTML = `
+    <button> Back </button>
+    <img src = "${country.flag}" alt = "country flag">
+    <p>${country.name}</p>
+    <p>Population: ${country.population.toLocaleString()}</p>
+    <p>Region: ${country.region}</p>
+    <p>Sub Region: ${country.subregion}</p>
+    <p>Capital: ${country.capital}</p>
+    <p>Top Level Domain: ${country.topLevelDomain}</p>
+    <p>Currencies:${country.currencies.map(currency => currency.name)}</p>
+    <p>Languages: ${country.languages.map(language => language.name)}</p>
+    <p>Border Countries: ${country.borders}</p>
+    `;
+  
+  targetCountries.append(countryMax)
   })
   
   targetCountries.append(countryCard)
