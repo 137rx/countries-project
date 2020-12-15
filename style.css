@@ -55,3 +55,7 @@ img{
     margin: 0;
 }
 
+.bottomHeader {
+    display: flex;
+    justify-content: space-between;
+}
