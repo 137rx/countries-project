@@ -32,7 +32,7 @@ function countryInfo(country){
   let countryMax = document.createElement("div")
     countryMax.className = "countryMax"
     countryMax.innerHTML = `
-    <button> Back </button>
+    <button class="back-button"> Back </button>
     <img src = "${country.flag}" alt = "country flag">
     <p>${country.name}</p>
     <p>Population: ${country.population.toLocaleString()}</p>
@@ -44,11 +44,20 @@ function countryInfo(country){
     <p>Languages: ${country.languages.map(language => language.name)}</p>
     <p>Border Countries: ${country.borders}</p>
     `;
+
+  
   
   targetCountries.append(countryMax)
+  let backButton = document.querySelector(".back-button");
+  backButton.addEventListener("click", ()=>
+    (console.log("hey"))
+  )
+
   })
   
   targetCountries.append(countryCard)
+
+ 
 
 }
 
@@ -66,7 +75,7 @@ function searchBar(countryList) {
         lowerCaseName.includes(searchValue) || lowerCaseCapital.includes(searchValue)
       ) {
         return country;
-      }
+      } 
     });
     targetCountries.innerHTML = " "
     return makePageForCountries(filteredCountries)
@@ -85,9 +94,8 @@ function matchRegion(countryList){
         if (selectedValue == country.region) {
           
           return country
-          
-        }
-      
+
+        } 
     });
     targetCountries.innerHTML = " "
     return makePageForCountries(filteredByRegion)

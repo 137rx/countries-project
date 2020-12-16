@@ -16,7 +16,7 @@ body.dark .upperHeader, body.dark .countrySearch, body.dark .countryCard, body.d
     color: white;
 }
 
-.label {
+.label-dark {
     display: flex;
 }
 
