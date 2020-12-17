@@ -27,6 +27,7 @@ function countryInfo(country){
   <p>Region: ${country.region}</p>
   <p>Capital: ${country.capital}</p>`;
 
+
   countryCard.addEventListener("click", ()=>{
   targetCountries.innerHTML = " ";
   let countryMax = document.createElement("div")
@@ -42,16 +43,24 @@ function countryInfo(country){
     <p>Top Level Domain: ${country.topLevelDomain}</p>
     <p>Currencies:${country.currencies.map(currency => currency.name)}</p>
     <p>Languages: ${country.languages.map(language => language.name)}</p>
-    <p>Border Countries: ${country.borders}</p>
+    <p class="border-countries">Border Countries: ${country.borders}</p>
     `;
 
   
   
   targetCountries.append(countryMax)
   let backButton = document.querySelector(".back-button");
-  backButton.addEventListener("click", ()=>
-    (console.log("hey"))
+  backButton.addEventListener("click", ()=>{
+  targetCountries.innerHTML = " ";
+  fetchCountries()
+  }
   )
+
+  let borderCountries = document.querySelector(".border-countries");
+  borderCountries.addEventListener("click", ()=>{
+    targetCountries.innerHTML = " ";
+
+  })
 
   })
   
